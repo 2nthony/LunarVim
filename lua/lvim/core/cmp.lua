@@ -182,7 +182,7 @@ M.config = function()
           vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. lvim.icons.ui.Ellipsis
         end
         if lvim.use_icons then
-          vim_item.kind = lvim.builtin.cmp.formatting.kind_icons[vim_item.kind]
+          vim_item.kind = lvim.builtin.cmp.formatting.kind_icons[vim_item.kind] or vim_item.kind
 
           if entry.source.name == "copilot" then
             vim_item.kind = lvim.icons.git.Octoface
